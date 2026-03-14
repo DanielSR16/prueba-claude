@@ -1,7 +1,9 @@
 const Anthropic = require('@anthropic-ai/sdk');
 const { execSync } = require('child_process');
 
-const client = new Anthropic.default();
+const client = new Anthropic.Anthropic({
+  apiKey: process.env.ANTHROPIC_API_KEY,
+});
 
 const diff = execSync('git diff origin/main...HEAD').toString();
 
