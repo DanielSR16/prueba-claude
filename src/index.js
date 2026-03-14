@@ -25,3 +25,21 @@ app.listen(PORT, () => {
 
 
 });
+
+
+app.get('/action-2', (req, res) => {
+  let list = [];
+
+  for (let i = 0; i < 10; i++) {
+    list.push(i);
+  }
+
+  res.json({ list });
+})
+
+app.listen(PORT, () => {
+  console.log(`Servidor corriendo en http://localhost:${PORT}`);
+
+
+
+});
