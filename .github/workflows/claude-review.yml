@@ -31,4 +31,6 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
           REPO: ${{ github.repository }}
-        run: node .github/scripts/claude-review.js
+        run: |
+          echo "API Key existe: ${{ secrets.ANTHROPIC_API_KEY != '' }}"
+          node .github/scripts/claude-review.js
